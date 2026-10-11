@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <% if (typeof user !== 'undefined' && user) { %>
+
+    <h2>Пользователь зарегистрирован</h2>
+    <ul>
+      <li><b>Логин:</b> <%= user.login %></li>
+      <li><b>Пароль:</b> <%= user.password %></li>
+      <li><b>ФИО:</b> <%= user.fio %></li>
+      <li><b>Телефон:</b> <%= user.phone %></li>
+      <li><b>Email:</b> <%= user.email %></li>
+    </ul>
+    <p><a href="/register">← Зарегистрировать ещё одного</a></p>
+
+  <% } else { %>
+
+    <form method="POST" action="/register">
+      <p>
+        <label>Логин:<br>
+          <input name="login" placeholder="Логин" required>
+        </label>
+      </p>
+      <p>
+        <label>Пароль:<br>
+          <input name="password" type="password" placeholder="Пароль" required>
+        </label>
+      </p>
+      <p>
+        <label>ФИО:<br>
+          <input name="fio" placeholder="Иванов Иван Иванович" required>
+        </label>
+      </p>
+      <p>
+        <label>Телефон:<br>
+          <input name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+        </label>
+      </p>
+      <p>
+        <label>Email:<br>
+          <input name="email" type="email" placeholder="user@example.com" required>
+        </label>
+      </p>
+      <button type="submit">Создать пользователя</button>
+    </form>
+
+  <% } %>
+</body>
+</html>
