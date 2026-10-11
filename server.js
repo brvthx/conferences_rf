@@ -13,6 +13,12 @@ app.set('views', join(__dirname, 'views'));
 
 app.use(express.static(join(__dirname, "public")));
 
+app.get("/", (req, res) => {
+    res.render("index", {
+        title: "Конференции.РФ"
+    });
+});
+
 app.get("/register", (req, res) => {
     res.render("register", {
         title: "Регистрация на портале"
@@ -28,39 +34,74 @@ app.get("/about", (req, res) => {
 
 app.get("/contact", (req, res) => {
     res.send(`
-        <html>
-            <body>
+        <!DOCTYPE html>
+        <html lang="ru">
+        <head>
+            <meta charset="UTF-8">
+            <title>Контакты — Конференции.РФ</title>
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            <header>
+                <a href="/" class="logo">Конференции.РФ</a>
+            </header>
+            <main>
                 <h1>Контакты</h1>
                 <p>Телефон: +7 (900) 123-45-67</p>
-            </body>
+                <p><a href="/">← На главную</a></p>
+            </main>
+        </body>
         </html>
     `);
 });
 
 app.get("/help", (req, res) => {
     res.send(`
-        <html>
-            <body>
+        <!DOCTYPE html>
+        <html lang="ru">
+        <head>
+            <meta charset="UTF-8">
+            <title>Помощь — Конференции.РФ</title>
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            <header>
+                <a href="/" class="logo">Конференции.РФ</a>
+            </header>
+            <main>
                 <h1>Помощь</h1>
-            </body>
+                <p><a href="/">← На главную</a></p>
+            </main>
+        </body>
         </html>
     `);
 });
 
 app.get("/rooms", (req, res) => {
     res.send(`
-        <html>
-            <body>
+        <!DOCTYPE html>
+        <html lang="ru">
+        <head>
+            <meta charset="UTF-8">
+            <title>Список помещений — Конференции.РФ</title>
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            <header>
+                <a href="/" class="logo">Конференции.РФ</a>
+            </header>
+            <main>
                 <h1>Список помещений</h1>
                 <ul>
                     <li>Конференц-зал №1</li>
                     <li>Конференц-зал №2</li>
                 </ul>
-            </body>
+                <p><a href="/">← На главную</a></p>
+            </main>
+        </body>
         </html>
     `);
 });
-
 
 app.post("/register", (req, res) => {
     res.render("register", {

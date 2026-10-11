@@ -5,8 +5,10 @@
   <title><%= title %></title>
 </head>
 <body>
+<%- include('partials/header', { title: title }) %>
   <h1><%= title %></h1>
   <p><%= description %></p>
   <p><a href="/">← На главную</a></p>
+<%- include('partials/footer') %>
 </body>
 </html>

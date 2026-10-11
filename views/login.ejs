@@ -5,11 +5,13 @@
   <title><%= title %></title>
 </head>
 <body>
+<%- include('partials/header', { title: title }) %>
   <h1><%= title %></h1>
   <form method="POST" action="/login">
     <p><label>Логин:<br><input name="login" required></label></p>
     <p><label>Пароль:<br><input name="password" type="password" required></label></p>
     <button type="submit">Войти</button>
   </form>
+<%- include('partials/footer') %>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <title><%= title %></title>
 </head>
 <body>
+<%- include('partials/header', { title: title }) %>
   <h1><%= title %></h1>
   <p>Пользователь: <b><%= user.fio %></b></p>
 
@@ -14,7 +15,7 @@
       <li><%= r.room_name %> — <i><%= r.status %></i></li>
     <% }); %>
   </ul>
-
+<%- include('partials/footer') %>
   <p><a href="/">← На главную</a></p>
 </body>
 </html>

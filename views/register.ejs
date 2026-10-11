@@ -5,9 +5,9 @@
   <title><%= title %></title>
 </head>
 <body>
+<%- include('partials/header', { title: title }) %>
   <h1><%= title %></h1>
-
-  <% if (typeof user !== 'undefined' && user) { %>
+<% if (typeof user !== 'undefined' && user) { %>
 
     <h2>Пользователь зарегистрирован</h2>
     <ul>
@@ -20,7 +20,7 @@
     </ul>
     <p><a href="/register">← Зарегистрировать ещё одного</a></p>
 
-  <% } else { %>
+<% } else { %>
 
     <form method="POST" action="/register">
       <p>
@@ -57,6 +57,8 @@
       <button type="reset">Очистить форму</button>
     </form>
 
-  <% } %>
+<% } %>
+
+<%- include('partials/footer') %>
 </body>
 </html>
