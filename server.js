@@ -70,7 +70,8 @@ app.post("/register", (req, res) => {
             password: req.body.password,
             fio: req.body.fio,
             phone: req.body.phone,
-            email: req.body.email
+            email: req.body.email,
+            city: req.body.city,
         }
     });
 });

@@ -16,6 +16,7 @@
       <li><b>ФИО:</b> <%= user.fio %></li>
       <li><b>Телефон:</b> <%= user.phone %></li>
       <li><b>Email:</b> <%= user.email %></li>
+      <li><b>Город:</b> <%= user.city %></li>
     </ul>
     <p><a href="/register">← Зарегистрировать ещё одного</a></p>
 
@@ -47,7 +48,13 @@
           <input name="email" type="email" placeholder="user@example.com" required>
         </label>
       </p>
+      <p>
+        <label>Город:<br>
+            <input name="city" placeholder="Москва" required>
+        </label>
+      </p>
       <button type="submit">Создать пользователя</button>
+      <button type="reset">Очистить форму</button>
     </form>
 
   <% } %>
